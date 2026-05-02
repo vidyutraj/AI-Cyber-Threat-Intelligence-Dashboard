@@ -1,0 +1,552 @@
+.ti-container {
+  padding: 24px;
+  color: #e6edf3;
+}
+
+.ti-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+/* STIX / CSV export buttons */
+.ti-stix-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 7px;
+  border: 1px solid rgba(139,92,246,0.4);
+  background: rgba(139,92,246,0.1);
+  color: #a78bfa;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.ti-stix-btn:hover { background: rgba(139,92,246,0.2); }
+.ti-stix-btn--secondary {
+  border-color: rgba(59,130,246,0.3);
+  background: rgba(59,130,246,0.07);
+  color: #60a5fa;
+}
+.ti-stix-btn--secondary:hover { background: rgba(59,130,246,0.15); }
+
+/* Dedup section badge */
+.ti-section-badge {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: rgba(139,92,246,0.15);
+  color: #a78bfa;
+  border: 1px solid rgba(139,92,246,0.25);
+  vertical-align: middle;
+}
+
+/* CVE ID link */
+.ti-cve-id--link {
+  color: #79c0ff;
+  text-decoration: none;
+}
+.ti-cve-id--link:hover { text-decoration: underline; }
+
+.ti-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+
+.ti-subtitle {
+  margin: 6px 0 0;
+  color: #94a3b8;
+  font-size: 13px;
+  max-width: 720px;
+}
+
+.ti-window-switch {
+  display: flex;
+  gap: 4px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 4px;
+}
+.ti-window-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+}
+.ti-window-btn:hover {
+  background: #21262d;
+  color: #fff;
+}
+.ti-window-btn--active {
+  background: #1f6feb;
+  color: #fff;
+}
+
+.ti-alert {
+  background: #542024;
+  color: #ffb4ba;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #8d1b25;
+  margin-bottom: 16px;
+}
+
+.ti-loading {
+  padding: 14px;
+  color: #94a3b8;
+  font-style: italic;
+}
+.ti-empty {
+  padding: 14px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.ti-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.ti-stat-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 12px;
+}
+.ti-stat-card__value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+.ti-stat-card__label {
+  font-size: 11px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.ti-stat-card--kev {
+  border-color: #f85149;
+}
+.ti-stat-card--kev .ti-stat-card__value {
+  color: #ff7b72;
+}
+
+/* Inner sub-tabs */
+.ti-inner-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #30363d;
+  margin-bottom: 18px;
+}
+
+.ti-inner-tab {
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s;
+}
+
+.ti-inner-tab:hover { color: #e6edf3; }
+
+.ti-inner-tab--active {
+  color: #fff;
+  border-bottom-color: #1f6feb;
+}
+
+.ti-section {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.ti-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+.ti-section-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+.ti-section-note {
+  font-size: 11px;
+  color: #6b7280;
+  font-family: ui-monospace, monospace;
+}
+
+.ti-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+@media (max-width: 1100px) {
+  .ti-two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CVE cards -------------------------------------------------------------- */
+.ti-cve-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 12px;
+}
+.ti-cve-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 12px;
+}
+.ti-cve-card__head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.ti-cve-card__title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.ti-cve-id {
+  font-family: ui-monospace, monospace;
+  font-weight: 600;
+  color: #fff;
+}
+.ti-pill {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+.ti-pill--critical { background: #490202; color: #ff7b72; border: 1px solid #da3633; }
+.ti-pill--high     { background: #542a04; color: #ffa657; border: 1px solid #bb6a00; }
+.ti-pill--medium   { background: #3b2f01; color: #e3b341; border: 1px solid #9e6a03; }
+.ti-pill--low      { background: #0f3524; color: #7ee787; border: 1px solid #238636; }
+.ti-pill--muted    { background: #21262d; color: #8b949e; border: 1px solid #30363d; }
+.ti-pill--kev      { background: #490202; color: #ff7b72; border: 1px solid #f85149; }
+
+.ti-scorebar {
+  position: relative;
+  height: 14px;
+  background: #21262d;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.ti-scorebar__fill {
+  background: linear-gradient(90deg, #2dba4e 0%, #e3b341 50%, #f85149 100%);
+  height: 100%;
+}
+.ti-scorebar__label {
+  position: absolute;
+  top: 0;
+  right: 6px;
+  font-family: ui-monospace, monospace;
+  font-size: 10px;
+  color: #fff;
+  line-height: 14px;
+  mix-blend-mode: difference;
+}
+
+.ti-cve-card__metrics {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.ti-metric {
+  text-align: center;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 4px;
+}
+.ti-metric__label {
+  display: block;
+  font-size: 10px;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+.ti-metric__value {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #e6edf3;
+}
+
+.ti-cve-reasons {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+.ti-cve-reasons li { margin-bottom: 2px; }
+
+/* Trending --------------------------------------------------------------- */
+.ti-trend-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ti-trend-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  align-items: center;
+  gap: 10px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.ti-trend-row__left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.ti-trend-value {
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  color: #e6edf3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ti-trend-row__mid { color: #7ee787; }
+.ti-sparkline-empty { color: #6b7280; font-family: ui-monospace, monospace; }
+.ti-trend-row__right {
+  display: flex;
+  gap: 8px;
+}
+.ti-trend-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.ti-trend-stat__label {
+  font-size: 9px;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+.ti-trend-stat__value {
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  color: #e6edf3;
+}
+.ti-trend-stat--z .ti-trend-stat__value {
+  color: #ffa657;
+  font-weight: 700;
+}
+
+.ti-type-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.ti-type-tag--cve       { background: #3b2f01; color: #e3b341; }
+.ti-type-tag--ip        { background: #0f3524; color: #7ee787; }
+.ti-type-tag--domain    { background: #0d2f56; color: #79c0ff; }
+.ti-type-tag--hash      { background: #2d1b45; color: #d2a8ff; }
+.ti-type-tag--malware   { background: #490202; color: #ff7b72; }
+.ti-type-tag--technique { background: #21262d; color: #8b949e; }
+
+/* Hubs ------------------------------------------------------------------- */
+.ti-hub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ti-hub-row {
+  display: grid;
+  grid-template-columns: auto 2fr 3fr auto auto auto;
+  gap: 10px;
+  align-items: center;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 12px;
+}
+.ti-hub-value {
+  font-family: ui-monospace, monospace;
+  color: #e6edf3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ti-hub-bar {
+  height: 8px;
+  background: #21262d;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.ti-hub-bar__fill {
+  height: 100%;
+  background: #1f6feb;
+}
+.ti-hub-stat {
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+/* Clusters --------------------------------------------------------------- */
+.ti-cluster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 10px;
+}
+.ti-cluster-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 12px;
+}
+.ti-cluster-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 11px;
+  color: #94a3b8;
+}
+.ti-cluster-size {
+  font-weight: 700;
+  color: #7ee787;
+}
+.ti-cluster-jaccard {
+  font-family: ui-monospace, monospace;
+}
+.ti-cluster-sources {
+  color: #79c0ff;
+}
+.ti-cluster-titles {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 12px;
+  color: #e6edf3;
+}
+.ti-cluster-titles li {
+  margin-bottom: 4px;
+}
+
+/* Sparkline -------------------------------------------------------------- */
+.ti-sparkline {
+  display: block;
+}
+
+/* Threat Actors ---------------------------------------------------------- */
+.ti-actor-list { display: flex; flex-direction: column; gap: 10px; }
+
+.ti-actor-card {
+  border-radius: 12px;
+  border: 1px solid #30363d;
+  border-left-width: 4px;
+  background: #0d1117;
+  overflow: hidden;
+}
+
+.ti-actor-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  cursor: pointer;
+  user-select: none;
+}
+.ti-actor-head:hover { background: rgba(255,255,255,0.02); }
+
+.ti-actor-main { display: flex; align-items: center; gap: 10px; flex: 1; flex-wrap: wrap; }
+.ti-actor-name { font-size: 14px; font-weight: 700; color: #e6edf3; }
+.ti-actor-origin { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+.ti-actor-count { font-size: 11px; color: #6b7280; }
+.ti-actor-breadth { font-size: 11px; color: #4b5563; }
+.ti-actor-motives { display: flex; gap: 6px; flex-wrap: wrap; }
+.ti-actor-toggle { font-size: 10px; color: #4b5563; flex-shrink: 0; }
+
+.ti-actor-body {
+  border-top: 1px solid #21262d;
+  padding: 14px;
+}
+.ti-actor-desc { font-size: 13px; color: #8b949e; margin: 0 0 12px; line-height: 1.5; }
+.ti-actor-sections { display: flex; flex-direction: column; gap: 10px; }
+.ti-actor-section {}
+.ti-actor-section-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #4b5563;
+  margin-bottom: 6px;
+}
+.ti-actor-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.ti-cve-chip {
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: rgba(245,158,11,0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245,158,11,0.3);
+}
+.ti-type-tag--mitre {
+  background: rgba(139,92,246,0.15);
+  color: #a78bfa;
+  border-color: rgba(139,92,246,0.3);
+}
+.ti-actor-articles {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.ti-actor-articles li { display: flex; flex-direction: column; gap: 2px; }
+.ti-actor-articles a { font-size: 12px; color: #60a5fa; text-decoration: none; line-height: 1.4; }
+.ti-actor-articles a:hover { text-decoration: underline; }
+.ti-actor-art-meta { font-size: 11px; color: #4b5563; }
+
+/* CVE reasons collapse --------------------------------------------------- */
+.ti-cve-reasons-toggle {
+  background: transparent;
+  border: none;
+  color: #60a5fa;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 4px 0 0;
+  text-align: left;
+}
+.ti-cve-reasons-toggle:hover { text-decoration: underline; }

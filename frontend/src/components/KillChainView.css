@@ -1,0 +1,338 @@
+.kc-container {
+  color: #e6edf3;
+}
+
+.kc-loading, .kc-empty {
+  padding: 20px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.kc-error {
+  padding: 10px;
+  color: #ff7b72;
+  background: #490202;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.kc-tabs {
+  display: flex;
+  gap: 2px;
+  border-bottom: 1px solid #30363d;
+  margin-bottom: 14px;
+}
+
+.kc-tab {
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s;
+}
+
+.kc-tab:hover { color: #e6edf3; }
+
+.kc-tab--active {
+  color: #fff;
+  border-bottom-color: #1f6feb;
+}
+
+.kc-badge {
+  background: #1f6feb;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 999px;
+}
+
+.kc-stats-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* Heatmap bar chart -------------------------------------------------------- */
+.kc-heatmap {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 220px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.kc-tactic-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 4px 6px;
+  border-radius: 6px;
+  min-width: 64px;
+  flex: 1;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: border-color 0.15s, background 0.15s;
+  position: relative;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.kc-tactic-card:hover,
+.kc-tactic-card--active {
+  background: #161b22;
+  border-color: var(--tactic-color, #30363d);
+}
+
+.kc-tactic-bar {
+  width: 100%;
+  max-width: 48px;
+  background: var(--tactic-color, #8b949e);
+  border-radius: 4px 4px 0 0;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+  min-height: 4px;
+}
+
+.kc-tactic-card:hover .kc-tactic-bar,
+.kc-tactic-card--active .kc-tactic-bar {
+  opacity: 1;
+}
+
+.kc-tactic-count {
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  color: var(--tactic-color, #8b949e);
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.kc-tactic-label {
+  font-size: 10px;
+  color: #94a3b8;
+  text-align: center;
+  line-height: 1.2;
+  margin-top: 3px;
+  word-break: break-word;
+}
+
+.kc-tactic-tech-count {
+  font-size: 9px;
+  color: #4b5563;
+  margin-top: 2px;
+}
+
+/* Tactic detail panel ----------------------------------------------------- */
+.kc-detail {
+  margin-top: 14px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.kc-detail__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.kc-detail__tactic {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.kc-detail__id {
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.kc-detail__close {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 15px;
+}
+.kc-detail__close:hover { color: #fff; }
+
+.kc-detail__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 700px) {
+  .kc-detail__body { grid-template-columns: 1fr; }
+}
+
+.kc-detail__col h4 {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin: 0 0 8px;
+  letter-spacing: 0.4px;
+}
+
+.kc-tech-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.kc-tech-item {
+  display: grid;
+  grid-template-columns: 80px 1fr 28px;
+  align-items: center;
+  gap: 6px;
+}
+
+.kc-tech-link {
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  color: #79c0ff;
+  text-decoration: none;
+}
+.kc-tech-link:hover { text-decoration: underline; }
+
+.kc-tech-bar-wrap {
+  height: 8px;
+  background: #21262d;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.kc-tech-bar {
+  height: 100%;
+  border-radius: 4px;
+  opacity: 0.7;
+}
+
+.kc-tech-count {
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  color: #6b7280;
+  text-align: right;
+}
+
+.kc-sample-article {
+  display: block;
+  font-size: 12px;
+  color: #79c0ff;
+  text-decoration: none;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.kc-sample-article:hover { color: #fff; text-decoration: underline; }
+
+.kc-sample-src {
+  display: block;
+  font-size: 10px;
+  color: #6b7280;
+  margin-bottom: 2px;
+}
+
+/* Multi-stage campaigns --------------------------------------------------- */
+.kc-multistage {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kc-multistage-note {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0 0 8px;
+  line-height: 1.5;
+}
+
+.kc-ms-article {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.kc-ms-article__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.kc-ms-article__title {
+  font-size: 13px;
+  color: #79c0ff;
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 1.4;
+  flex: 1;
+}
+.kc-ms-article__title:hover { color: #fff; text-decoration: underline; }
+
+.kc-ms-article__source {
+  font-size: 10px;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.kc-ms-chain {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.kc-ms-tactic-badge {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  color: #fff;
+  opacity: 0.9;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+
+.kc-ms-coverage {
+  position: relative;
+  height: 6px;
+  background: #21262d;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.kc-ms-coverage__fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1f6feb, #a855f7);
+  border-radius: 3px;
+}
+
+.kc-ms-coverage__label {
+  position: absolute;
+  right: 0;
+  top: -1px;
+  font-size: 9px;
+  color: #6b7280;
+  transform: translateY(-100%);
+  padding-bottom: 2px;
+}

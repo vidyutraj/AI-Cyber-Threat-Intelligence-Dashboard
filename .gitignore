@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+
+# Generated RSS / scraped data (user-specific, regenerated at runtime)
+*_rss_articles.csv
+*_advisories.csv
+malwarebazaar_samples.csv
+darkreading_rss_articles.csv
+
+# SQLite caches (generated at runtime, contain user-specific enrichment data)
+*.sqlite3
+
+# Local secrets
+.env
+
+# macOS
+.DS_Store
+
+# Editors / IDEs
+.idea/
+.vscode/
+
+# Node / frontend build artifacts
+frontend/node_modules/
+frontend/dist/

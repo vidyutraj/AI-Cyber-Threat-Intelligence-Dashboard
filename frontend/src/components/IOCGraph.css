@@ -1,0 +1,278 @@
+.iocgraph {
+  position: relative;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.iocgraph-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid #21262d;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.iocgraph-filters {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.iocgraph-type-btn {
+  background: #21262d;
+  border: 1px solid #30363d;
+  color: #94a3b8;
+  padding: 3px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  transition: all 0.15s;
+}
+.iocgraph-type-btn:hover { border-color: #6b7280; color: #fff; }
+.iocgraph-type-btn.active { border-color: currentColor; }
+.iocgraph-type-btn--cve.active       { background: #3b2f01; color: #e3b341; border-color: #e3b341; }
+.iocgraph-type-btn--ip.active        { background: #0f3524; color: #7ee787; border-color: #7ee787; }
+.iocgraph-type-btn--domain.active    { background: #0d2f56; color: #79c0ff; border-color: #79c0ff; }
+.iocgraph-type-btn--hash.active      { background: #2d1b45; color: #d2a8ff; border-color: #d2a8ff; }
+.iocgraph-type-btn--malware.active   { background: #490202; color: #ff7b72; border-color: #ff7b72; }
+.iocgraph-type-btn--technique.active { background: #21262d; color: #e6edf3; border-color: #8b949e; }
+
+.iocgraph-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.iocgraph-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.iocgraph-select {
+  background: #21262d;
+  border: 1px solid #30363d;
+  color: #e6edf3;
+  padding: 3px 6px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.iocgraph-reload-btn {
+  background: #21262d;
+  border: 1px solid #30363d;
+  color: #94a3b8;
+  padding: 4px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.iocgraph-reload-btn:hover { background: #30363d; color: #fff; }
+.iocgraph-reload-btn:disabled { opacity: 0.5; cursor: default; }
+
+.iocgraph-error {
+  padding: 10px 14px;
+  color: #ff7b72;
+  font-size: 12px;
+  background: #490202;
+  border-bottom: 1px solid #8d1b25;
+}
+
+.iocgraph-canvas-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 460px;
+}
+
+.iocgraph-svg {
+  display: block;
+  width: 100%;
+}
+
+.iocgraph-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  font-size: 13px;
+  font-style: italic;
+  background: rgba(13,17,23,0.7);
+}
+
+.iocgraph-footer {
+  display: flex;
+  gap: 16px;
+  padding: 6px 14px;
+  font-size: 11px;
+  color: #6b7280;
+  border-top: 1px solid #21262d;
+}
+
+.iocgraph-hint {
+  margin-left: auto;
+  color: #4b5563;
+}
+
+.iocgraph-legend {
+  display: flex;
+  gap: 12px;
+  padding: 6px 14px 10px;
+  flex-wrap: wrap;
+}
+
+.iocgraph-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.iocgraph-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Floating tooltip */
+.iocgraph-tooltip {
+  position: fixed;
+  pointer-events: none;
+  z-index: 100;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 8px 12px;
+  min-width: 140px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.iocgraph-tt-type {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #6b7280;
+  letter-spacing: 0.4px;
+}
+
+.iocgraph-tt-value {
+  font-family: ui-monospace, monospace;
+  font-size: 13px;
+  color: #e6edf3;
+  font-weight: 600;
+  word-break: break-all;
+  max-width: 220px;
+}
+
+.iocgraph-tt-stats {
+  font-size: 10px;
+  color: #94a3b8;
+  margin-top: 3px;
+}
+
+/* Side panel */
+.iocgraph-sidepanel {
+  position: absolute;
+  top: 52px;
+  right: 0;
+  width: 260px;
+  background: #161b22;
+  border-left: 1px solid #30363d;
+  border-bottom: 1px solid #30363d;
+  border-radius: 0 0 0 8px;
+  padding: 12px;
+  z-index: 20;
+  box-shadow: -4px 4px 20px rgba(0,0,0,0.4);
+}
+
+.iocgraph-sp-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.iocgraph-sp-value {
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  color: #e6edf3;
+  font-weight: 600;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.iocgraph-sp-close {
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 2px;
+  line-height: 1;
+}
+.iocgraph-sp-close:hover { color: #fff; }
+
+.iocgraph-sp-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.iocgraph-sp-metrics div {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+.iocgraph-sp-metrics label {
+  display: block;
+  font-size: 10px;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+.iocgraph-sp-metrics span {
+  font-family: ui-monospace, monospace;
+  font-size: 13px;
+  color: #e6edf3;
+  font-weight: 600;
+}
+
+.iocgraph-sp-articles h4 {
+  font-size: 11px;
+  color: #6b7280;
+  text-transform: uppercase;
+  margin: 0 0 6px;
+}
+
+.iocgraph-sp-article-link {
+  display: block;
+  font-size: 11px;
+  color: #79c0ff;
+  text-decoration: none;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+.iocgraph-sp-article-link:hover { color: #fff; text-decoration: underline; }
+
+.iocgraph-sp-article-src {
+  display: block;
+  font-size: 10px;
+  color: #6b7280;
+  margin-bottom: 2px;
+}
